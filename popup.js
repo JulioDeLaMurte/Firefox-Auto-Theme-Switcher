@@ -27,6 +27,32 @@ async function updateCurrentUrl() {
 }
 
 /**
+ * Applique le thème à l'onglet actif
+ */
+async function applyThemeToCurrentTab(color) {
+    const tabs = await browser.tabs.query({ active: true, currentWindow: true });
+    if (tabs[0]) {
+        await browser.theme.update({
+            colors: {
+                frame: color,
+                tab_background_text: getContrastColor(color)
+            }
+        });
+    }
+}
+
+/**
+ * Calcule la couleur de contraste (noir ou blanc) pour une couleur donnée
+ */
+function getContrastColor(hexcolor) {
+    const r = parseInt(hexcolor.substr(1, 2), 16);
+    const g = parseInt(hexcolor.substr(3, 2), 16);
+    const b = parseInt(hexcolor.substr(5, 2), 16);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    return luminance > 0.5 ? '#000000' : '#ffffff';
+}
+
+/**
  * Gestionnaire de soumission du formulaire
  */
 async function handleFormSubmit(event) {
@@ -38,24 +64,26 @@ async function handleFormSubmit(event) {
     try {
         await StorageManager.addRule(urlPattern, color);
 
-        // Appliquer immédiatement le thème si l'URL active correspond
+        // Appliquer immédiatement le thème
         const tabs = await browser.tabs.query({ active: true, currentWindow: true });
         if (tabs[0] && tabs[0].url) {
-            const rule = await StorageManager.findMatchingRule(tabs[0].url);
-            if (rule) {
-                await browser.runtime.sendMessage({
-                    type: 'updateTheme',
-                    url: tabs[0].url
-                });
-            }
+            await applyThemeToCurrentTab(color);
         }
 
-        // Réinitialiser le formulaire
+        // Réinitialiser le formulaire et fermer le popup
         event.target.reset();
         window.close();
     } catch (error) {
         console.error('Erreur lors de l\'ajout de la règle:', error);
     }
+}
+
+/**
+ * Gestionnaire de changement de couleur
+ */
+async function handleColorChange(event) {
+    const color = event.target.value;
+    await applyThemeToCurrentTab(color);
 }
 
 /**
@@ -68,8 +96,17 @@ function openOptionsPage() {
 // Initialisation
 document.addEventListener('DOMContentLoaded', () => {
     updateCurrentUrl();
-    document.getElementById('ruleForm').addEventListener('submit', handleFormSubmit);
-    document.getElementById('openOptions').addEventListener('click', (e) => {
+
+    const colorPicker = document.getElementById('themeColor');
+    const form = document.getElementById('ruleForm');
+    const optionsLink = document.getElementById('openOptions');
+
+    // Écouter les changements de couleur en temps réel
+    colorPicker.addEventListener('input', handleColorChange);
+
+    form.addEventListener('submit', handleFormSubmit);
+
+    optionsLink.addEventListener('click', (e) => {
         e.preventDefault();
         openOptionsPage();
     });
