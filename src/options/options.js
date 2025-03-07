@@ -1,56 +1,58 @@
-import StorageManager from './storage.js';
+import StorageManager from '../utils/storage.js';
 
 /**
- * Crée un élément de règle à partir du template
- * @param {Object} rule - La règle à afficher
- * @param {number} index - L'index de la règle
- * @returns {HTMLElement} L'élément créé
+ * Creates a rule element from template
+ * @param {Object} rule - Rule to display
+ * @param {number} index - Rule index
+ * @returns {HTMLElement} Created element
  */
 function createRuleElement(rule, index) {
     const template = document.getElementById('ruleTemplate');
     const element = template.content.cloneNode(true).firstElementChild;
 
-    // Remplir les informations de la règle
+    // Fill rule information
     element.querySelector('.rule-url').textContent = rule.url;
     element.querySelector('.color-preview').style.backgroundColor = rule.color;
     element.querySelector('.color-value').textContent = rule.color;
 
-    // Pré-remplir le formulaire d'édition
+    // Pre-fill edit form
     const editForm = element.querySelector('.edit-form');
     editForm.querySelector('.edit-url').value = rule.url;
     editForm.querySelector('.edit-color').value = rule.color;
 
-    // Gestionnaire pour le bouton d'édition
+    // Edit button handler
     element.querySelector('.edit-btn').addEventListener('click', () => {
         editForm.style.display = editForm.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Gestionnaire pour le bouton d'annulation
+    // Cancel button handler
     element.querySelector('.cancel-btn').addEventListener('click', () => {
         editForm.style.display = 'none';
     });
 
-    // Gestionnaire pour le bouton de sauvegarde
+    // Save button handler
     element.querySelector('.save-btn').addEventListener('click', async () => {
         const newUrl = editForm.querySelector('.edit-url').value;
         const newColor = editForm.querySelector('.edit-color').value;
 
         try {
             await StorageManager.updateRule(index, newUrl, newColor);
-            await loadRules(); // Recharger toutes les règles
+            await loadRules();
         } catch (error) {
-            console.error('Erreur lors de la mise à jour de la règle:', error);
+            console.error('Error updating rule:', error);
+            alert('Error updating rule. Please try again.');
         }
     });
 
-    // Gestionnaire pour le bouton de suppression
+    // Delete button handler
     element.querySelector('.delete-btn').addEventListener('click', async () => {
-        if (confirm('Êtes-vous sûr de vouloir supprimer cette règle ?')) {
+        if (confirm('Are you sure you want to delete this rule?')) {
             try {
                 await StorageManager.deleteRule(index);
-                await loadRules(); // Recharger toutes les règles
+                await loadRules();
             } catch (error) {
-                console.error('Erreur lors de la suppression de la règle:', error);
+                console.error('Error deleting rule:', error);
+                alert('Error deleting rule. Please try again.');
             }
         }
     });
@@ -59,30 +61,30 @@ function createRuleElement(rule, index) {
 }
 
 /**
- * Charge et affiche toutes les règles
+ * Loads and displays all rules
  */
 async function loadRules() {
     const rulesContainer = document.getElementById('rulesContainer');
     const rules = await StorageManager.getAllRules();
 
-    // Vider le conteneur
+    // Clear container
     rulesContainer.innerHTML = '';
 
     if (rules.length === 0) {
         rulesContainer.innerHTML = `
-      <div class="no-rules">
-        Aucune règle configurée
-      </div>
-    `;
+            <div class="no-rules">
+                No rules configured yet. Add rules from the extension popup.
+            </div>
+        `;
         return;
     }
 
-    // Ajouter chaque règle
+    // Add each rule
     rules.forEach((rule, index) => {
         const element = createRuleElement(rule, index);
         rulesContainer.appendChild(element);
     });
 }
 
-// Initialisation
+// Initialize options page
 document.addEventListener('DOMContentLoaded', loadRules); 

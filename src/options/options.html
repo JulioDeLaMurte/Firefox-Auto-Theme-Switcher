@@ -25,7 +25,7 @@
         .rule-item {
             display: flex;
             align-items: center;
-            padding: 10px;
+            padding: 16px;
             border-bottom: 1px solid #ccc;
         }
 
@@ -35,7 +35,9 @@
 
         .rule-url {
             flex: 2;
-            margin-right: 10px;
+            margin-right: 16px;
+            font-family: monospace;
+            font-size: 14px;
         }
 
         .rule-color {
@@ -59,10 +61,12 @@
 
         button {
             padding: 8px 12px;
-            margin-left: 5px;
+            margin-left: 8px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
         }
 
         .edit-btn {
@@ -70,55 +74,82 @@
             color: white;
         }
 
+        .edit-btn:hover {
+            background-color: #003eaa;
+        }
+
         .delete-btn {
             background-color: #d70022;
             color: white;
         }
 
+        .delete-btn:hover {
+            background-color: #a4000f;
+        }
+
         .no-rules {
-            padding: 20px;
+            padding: 32px;
             text-align: center;
             color: #6b6b6b;
+            font-size: 14px;
         }
 
         .edit-form {
             display: none;
             background-color: #f9f9fa;
-            padding: 15px;
-            margin-top: 10px;
+            padding: 16px;
+            margin-top: 12px;
             border-radius: 4px;
         }
 
         .form-group {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
 
         input[type="text"],
         input[type="color"] {
             width: 100%;
-            padding: 5px;
+            padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0060df;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 96, 223, 0.2);
         }
 
         .form-actions {
-            margin-top: 10px;
+            margin-top: 16px;
             text-align: right;
+        }
+
+        .cancel-btn {
+            background-color: #f0f0f4;
+            color: #2a2a2e;
+        }
+
+        .cancel-btn:hover {
+            background-color: #e0e0e6;
         }
     </style>
 </head>
 
 <body>
-    <h1>Gestion des règles de thèmes</h1>
+    <h1>URL Theme Rules</h1>
 
     <div id="rulesContainer" class="rules-container">
         <div class="no-rules">
-            Aucune règle configurée
+            No rules configured yet. Add rules from the extension popup.
         </div>
     </div>
 
@@ -130,21 +161,21 @@
                 <span class="color-value"></span>
             </div>
             <div class="rule-actions">
-                <button class="edit-btn">Modifier</button>
-                <button class="delete-btn">Supprimer</button>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
             </div>
             <div class="edit-form">
                 <div class="form-group">
-                    <label>Motif d'URL :</label>
+                    <label>URL Pattern:</label>
                     <input type="text" class="edit-url" required>
                 </div>
                 <div class="form-group">
-                    <label>Couleur :</label>
+                    <label>Color:</label>
                     <input type="color" class="edit-color" required>
                 </div>
                 <div class="form-actions">
-                    <button class="save-btn edit-btn">Enregistrer</button>
-                    <button class="cancel-btn">Annuler</button>
+                    <button class="save-btn edit-btn">Save</button>
+                    <button class="cancel-btn">Cancel</button>
                 </div>
             </div>
         </div>

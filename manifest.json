@@ -1,8 +1,10 @@
 {
     "manifest_version": 2,
-    "name": "Firefox Auto Theme Switcher",
-    "version": "1.0",
-    "description": "Automatically changes Firefox theme color based on the active URL",
+    "name": "URL Theme Switcher",
+    "version": "1.0.0",
+    "description": "Automatically changes Firefox theme colors based on the current website URL. Perfect for distinguishing between different environments (dev, staging, prod).",
+    "author": "Jules GF",
+    "homepage_url": "https://github.com/JulioDeLaMurte/Firefox-Auto-Theme-Switcher",
     "permissions": [
         "tabs",
         "storage",
@@ -10,21 +12,27 @@
         "<all_urls>"
     ],
     "background": {
-        "scripts": [
-            "background.js"
-        ],
-        "type": "module"
+        "page": "src/background/background.html"
     },
     "browser_action": {
-        "default_popup": "popup.html",
-        "default_title": "Auto Theme Switcher"
+        "default_popup": "src/popup/popup.html",
+        "default_title": "URL Theme Switcher",
+        "default_icon": {
+            "16": "icons/icon-16.png",
+            "32": "icons/icon-32.png",
+            "64": "icons/icon-64.png",
+            "128": "icons/icon-128.png"
+        }
     },
     "options_ui": {
-        "page": "options.html",
+        "page": "src/options/options.html",
         "browser_style": true,
         "open_in_tab": true
     },
     "icons": {
+        "16": "icons/icon-16.png",
+        "32": "icons/icon-32.png",
+        "64": "icons/icon-64.png",
         "128": "icons/icon-128.png"
     }
 }
