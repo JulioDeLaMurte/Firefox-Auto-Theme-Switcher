@@ -1,57 +1,98 @@
-# Firefox Auto Theme Switcher
+# URL Theme Switcher for Firefox
 
-Une extension Firefox qui change automatiquement la couleur du thème du navigateur en fonction de l'URL visitée.
+![Banner](screenshots/banner.png)
 
-## Fonctionnalités
+[![Available on Firefox Add-ons](https://img.shields.io/amo/v/url-theme-switcher?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/url-theme-switcher/)
+[![Users](https://img.shields.io/amo/users/url-theme-switcher?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/url-theme-switcher/)
+[![Rating](https://img.shields.io/amo/rating/url-theme-switcher?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/url-theme-switcher/)
 
-- Changement automatique de la couleur du thème en fonction de l'URL active
-- Interface utilisateur simple pour configurer les associations URL/couleurs
-- Sauvegarde automatique des préférences
-- Page d'options complète pour gérer toutes les règles
-- Retour automatique au thème par défaut pour les sites non configurés
+Automatically change your Firefox theme color based on the current website URL. Perfect for developers and users who work with multiple environments (development, staging, production) or want to visually distinguish between different websites.
 
-## Installation
+## ✨ Features
 
-1. Ouvrez Firefox et accédez à `about:debugging`
-2. Cliquez sur "Ce Firefox" dans le menu de gauche
-3. Cliquez sur "Charger un module temporaire"
-4. Sélectionnez le fichier `manifest.json` de ce projet
+- 🎨 **Automatic Theme Switching**: Changes Firefox's theme color automatically based on URL patterns
+- 🌈 **Real-time Preview**: See color changes instantly while picking colors
+- 🔧 **Easy Configuration**: Simple interface to add and manage URL patterns
+- 🌍 **Multi-language Support**: Available in English, French, German, Chinese, and Japanese
+- 🎯 **Smart URL Patterns**: Support for wildcards and flexible URL matching
+- 💾 **Persistent Rules**: Your color rules are saved and automatically applied
+- 🔒 **Privacy-Focused**: No data collection, works entirely on your browser
 
-Pour une installation permanente :
-1. Compressez tous les fichiers du projet en .zip
-2. Renommez l'extension du fichier en .xpi
-3. Ouvrez Firefox et accédez à `about:addons`
-4. Cliquez sur la roue dentée et sélectionnez "Installer un module depuis un fichier"
-5. Sélectionnez le fichier .xpi créé
+## 🖼️ Screenshots
 
-## Utilisation
+### Main Popup Interface
+![Popup Interface](screenshots/popup.png)
 
-1. Cliquez sur l'icône de l'extension dans la barre d'outils
-2. Pour ajouter une nouvelle règle :
-   - Entrez l'URL du site (ou un motif)
-   - Sélectionnez une couleur
-   - Cliquez sur "Ajouter"
-3. Les règles existantes peuvent être modifiées ou supprimées depuis la page d'options
+### Rules Management
+![Rules Management](screenshots/options.png)
 
-## Structure du projet
+## 🚀 Use Cases
 
-- `manifest.json` : Configuration de l'extension
-- `background.js` : Logique principale de l'extension
-- `popup.html/js` : Interface rapide de configuration
-- `options.html/js` : Interface complète de gestion
-- `storage.js` : Gestion de la persistance des données
-- `icons/` : Icônes de l'extension
+- **Development Environments**
+  - Development: Red theme
+  - Staging: Yellow theme
+  - Production: Green theme
 
-## Développement
+- **Website Categories**
+  - Social Media: Blue theme
+  - Work-related: Professional gray theme
+  - Personal: Custom color theme
 
-Pour contribuer au projet :
+- **Multiple Accounts**
+  - Personal Gmail: Purple theme
+  - Work Gmail: Blue theme
 
-1. Clonez le dépôt
-2. Installez les dépendances : `npm install`
-3. Effectuez vos modifications
-4. Testez l'extension en local
-5. Soumettez une pull request
+## 📖 How to Use
 
-## Licence
+1. Click the extension icon in your toolbar
+2. Enter a URL pattern (e.g., `*.example.com/*`)
+3. Choose a color for that URL pattern
+4. Click "Add Rule" to save
+5. The theme will automatically change when visiting matching URLs
 
-MIT 
+### URL Pattern Examples
+
+- `*://*.example.com/*` - Matches all subdomains of example.com
+- `*://dev.*.com/*` - Matches all development environments
+- `*://mail.google.com/*` - Matches Gmail specifically
+- `*://*.github.com/*` - Matches all GitHub pages
+
+## 🌍 Supported Languages
+
+- English (en)
+- Français (fr)
+- Deutsch (de)
+- 中文 (zh-CN)
+- 日本語 (ja)
+
+## 🔒 Privacy
+
+This extension:
+- Does not collect any user data
+- Does not require any special permissions except for theme management
+- Works completely offline
+- Is open source and transparent
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+- Report bugs
+- Suggest features
+- Add translations
+- Submit pull requests
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+Created by Jules GF
+- GitHub: [@JulioDeLaMurte](https://github.com/JulioDeLaMurte)
+
+---
+
+If you find this extension useful, please consider:
+- ⭐ Starring the repository
+- 📝 Leaving a review on the Firefox Add-ons store
+- 🌟 Sharing with your friends and colleagues 
