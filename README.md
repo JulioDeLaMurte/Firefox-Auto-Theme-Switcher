@@ -1,7 +1,5 @@
 # URL Theme Switcher for Firefox
 
-![Banner](screenshots/banner.png)
-
 [![Available on Firefox Add-ons](https://img.shields.io/amo/v/url-theme-switcher?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/url-theme-switcher/)
 [![Users](https://img.shields.io/amo/users/url-theme-switcher?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/url-theme-switcher/)
 [![Rating](https://img.shields.io/amo/rating/url-theme-switcher?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/url-theme-switcher/)
@@ -21,9 +19,11 @@ Automatically change your Firefox theme color based on the current website URL. 
 ## 🖼️ Screenshots
 
 ### Main Popup Interface
+
 ![Popup Interface](screenshots/popup.png)
 
 ### Rules Management
+
 ![Rules Management](screenshots/options.png)
 
 ## 🚀 Use Cases
@@ -68,6 +68,7 @@ Automatically change your Firefox theme color based on the current website URL. 
 ## 🔒 Privacy
 
 This extension:
+
 - Does not collect any user data
 - Does not require any special permissions except for theme management
 - Works completely offline
@@ -76,6 +77,7 @@ This extension:
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
+
 - Report bugs
 - Suggest features
 - Add translations
@@ -88,6 +90,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 Created by Jules GF
+
 - GitHub: [@JulioDeLaMurte](https://github.com/JulioDeLaMurte)
 
 ---
