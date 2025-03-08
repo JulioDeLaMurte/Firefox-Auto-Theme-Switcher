@@ -1,0 +1,83 @@
+{
+    "extensionName": {
+        "message": "Changeur de Thème par URL",
+        "description": "Name of the extension"
+    },
+    "extensionDescription": {
+        "message": "Change automatiquement les couleurs du thème Firefox en fonction de l'URL du site web actuel. Parfait pour distinguer différents environnements (dev, staging, prod).",
+        "description": "Description of the extension"
+    },
+    "currentUrl": {
+        "message": "URL actuelle : $URL$",
+        "description": "Shows the current URL",
+        "placeholders": {
+            "url": {
+                "content": "$1"
+            }
+        }
+    },
+    "noActiveTab": {
+        "message": "Aucun onglet actif",
+        "description": "Shown when no tab is active"
+    },
+    "urlPatternLabel": {
+        "message": "Modèle d'URL",
+        "description": "Label for URL pattern input"
+    },
+    "urlPatternPlaceholder": {
+        "message": "ex: *.example.com/*",
+        "description": "Placeholder for URL pattern input"
+    },
+    "urlPatternHelp": {
+        "message": "Utilisez * comme joker, ex: *://*.example.com/*",
+        "description": "Help text for URL pattern input"
+    },
+    "themeColorLabel": {
+        "message": "Couleur du thème",
+        "description": "Label for color picker"
+    },
+    "addRule": {
+        "message": "Ajouter une règle",
+        "description": "Button text for adding a new rule"
+    },
+    "updateRule": {
+        "message": "Mettre à jour la règle",
+        "description": "Button text for updating an existing rule"
+    },
+    "manageRules": {
+        "message": "Gérer toutes les règles",
+        "description": "Link text to open options page"
+    },
+    "noRulesConfigured": {
+        "message": "Aucune règle configurée. Ajoutez des règles depuis le popup de l'extension.",
+        "description": "Shown when no rules are configured"
+    },
+    "editButton": {
+        "message": "Modifier",
+        "description": "Edit button text"
+    },
+    "deleteButton": {
+        "message": "Supprimer",
+        "description": "Delete button text"
+    },
+    "saveButton": {
+        "message": "Enregistrer",
+        "description": "Save button text"
+    },
+    "cancelButton": {
+        "message": "Annuler",
+        "description": "Cancel button text"
+    },
+    "deleteConfirm": {
+        "message": "Êtes-vous sûr de vouloir supprimer cette règle ?",
+        "description": "Confirmation message when deleting a rule"
+    },
+    "errorSaving": {
+        "message": "Erreur lors de l'enregistrement de la règle. Veuillez réessayer.",
+        "description": "Error message when saving fails"
+    },
+    "errorDeleting": {
+        "message": "Erreur lors de la suppression de la règle. Veuillez réessayer.",
+        "description": "Error message when deletion fails"
+    }
+}

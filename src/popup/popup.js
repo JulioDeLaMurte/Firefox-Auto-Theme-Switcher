@@ -1,6 +1,33 @@
 import StorageManager from '../utils/storage.js';
 
 /**
+ * Gets a localized message
+ * @param {string} messageName - Message identifier
+ * @param {Array} substitutions - Optional substitutions
+ * @returns {string} Localized message
+ */
+function getMessage(messageName, substitutions = []) {
+    return browser.i18n.getMessage(messageName, substitutions);
+}
+
+/**
+ * Initializes localized strings in the UI
+ */
+function initializeLocalization() {
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const messageName = element.getAttribute('data-i18n');
+        element.textContent = getMessage(messageName);
+    });
+
+    // Update all elements with data-i18n-placeholder attribute
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const messageName = element.getAttribute('data-i18n-placeholder');
+        element.placeholder = getMessage(messageName);
+    });
+}
+
+/**
  * Updates the display of the current URL
  */
 async function updateCurrentUrl() {
@@ -9,7 +36,7 @@ async function updateCurrentUrl() {
     const urlElement = document.getElementById('currentUrl');
 
     if (currentTab?.url) {
-        urlElement.textContent = `Current URL: ${currentTab.url}`;
+        urlElement.textContent = getMessage('currentUrl', [currentTab.url]);
 
         // Pre-fill URL pattern based on current URL
         const urlPattern = document.getElementById('urlPattern');
@@ -20,10 +47,12 @@ async function updateCurrentUrl() {
         const rule = await StorageManager.findMatchingRule(currentTab.url);
         if (rule) {
             document.getElementById('themeColor').value = rule.color;
-            document.getElementById('submitButton').textContent = 'Update Rule';
+            document.getElementById('submitButton').textContent = getMessage('updateRule');
+        } else {
+            document.getElementById('submitButton').textContent = getMessage('addRule');
         }
     } else {
-        urlElement.textContent = 'No active tab';
+        urlElement.textContent = getMessage('noActiveTab');
     }
 }
 
@@ -136,6 +165,7 @@ function openOptionsPage() {
 
 // Initialize popup
 document.addEventListener('DOMContentLoaded', () => {
+    initializeLocalization();
     updateCurrentUrl();
 
     const colorPicker = document.getElementById('themeColor');

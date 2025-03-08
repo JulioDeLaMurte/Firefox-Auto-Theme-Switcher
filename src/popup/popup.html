@@ -106,25 +106,25 @@
 
 <body>
     <div class="current-url" id="currentUrl">
-        Loading current URL...
+        Loading...
     </div>
 
     <form id="ruleForm">
         <div class="form-group">
-            <label for="urlPattern">URL Pattern</label>
-            <input type="text" id="urlPattern" required placeholder="e.g., *.example.com/*">
-            <div class="help-text">Use * as wildcard, e.g., *://*.example.com/*</div>
+            <label for="urlPattern" data-i18n="urlPatternLabel">URL Pattern</label>
+            <input type="text" id="urlPattern" required data-i18n-placeholder="urlPatternPlaceholder">
+            <div class="help-text" data-i18n="urlPatternHelp"></div>
         </div>
 
         <div class="form-group">
-            <label for="themeColor">Theme Color</label>
+            <label for="themeColor" data-i18n="themeColorLabel">Theme Color</label>
             <input type="color" id="themeColor" required>
         </div>
 
-        <button type="submit" id="submitButton">Add Rule</button>
+        <button type="submit" id="submitButton" data-i18n="addRule">Add Rule</button>
     </form>
 
-    <a href="#" class="options-link" id="openOptions">Manage All Rules</a>
+    <a href="#" class="options-link" id="openOptions" data-i18n="manageRules">Manage All Rules</a>
 
     <script src="popup.js" type="module"></script>
 </body>

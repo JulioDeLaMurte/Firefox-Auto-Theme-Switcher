@@ -1,0 +1,83 @@
+{
+    "extensionName": {
+        "message": "URL主题切换器",
+        "description": "Name of the extension"
+    },
+    "extensionDescription": {
+        "message": "根据当前网站URL自动更改Firefox主题颜色。完美区分不同环境（开发、测试、生产）。",
+        "description": "Description of the extension"
+    },
+    "currentUrl": {
+        "message": "当前URL：$URL$",
+        "description": "Shows the current URL",
+        "placeholders": {
+            "url": {
+                "content": "$1"
+            }
+        }
+    },
+    "noActiveTab": {
+        "message": "没有活动标签页",
+        "description": "Shown when no tab is active"
+    },
+    "urlPatternLabel": {
+        "message": "URL模式",
+        "description": "Label for URL pattern input"
+    },
+    "urlPatternPlaceholder": {
+        "message": "例如：*.example.com/*",
+        "description": "Placeholder for URL pattern input"
+    },
+    "urlPatternHelp": {
+        "message": "使用*作为通配符，例如：*://*.example.com/*",
+        "description": "Help text for URL pattern input"
+    },
+    "themeColorLabel": {
+        "message": "主题颜色",
+        "description": "Label for color picker"
+    },
+    "addRule": {
+        "message": "添加规则",
+        "description": "Button text for adding a new rule"
+    },
+    "updateRule": {
+        "message": "更新规则",
+        "description": "Button text for updating an existing rule"
+    },
+    "manageRules": {
+        "message": "管理所有规则",
+        "description": "Link text to open options page"
+    },
+    "noRulesConfigured": {
+        "message": "尚未配置规则。请从扩展弹出窗口添加规则。",
+        "description": "Shown when no rules are configured"
+    },
+    "editButton": {
+        "message": "编辑",
+        "description": "Edit button text"
+    },
+    "deleteButton": {
+        "message": "删除",
+        "description": "Delete button text"
+    },
+    "saveButton": {
+        "message": "保存",
+        "description": "Save button text"
+    },
+    "cancelButton": {
+        "message": "取消",
+        "description": "Cancel button text"
+    },
+    "deleteConfirm": {
+        "message": "确定要删除此规则吗？",
+        "description": "Confirmation message when deleting a rule"
+    },
+    "errorSaving": {
+        "message": "保存规则时出错。请重试。",
+        "description": "Error message when saving fails"
+    },
+    "errorDeleting": {
+        "message": "删除规则时出错。请重试。",
+        "description": "Error message when deletion fails"
+    }
+}

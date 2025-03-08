@@ -1,0 +1,83 @@
+{
+    "extensionName": {
+        "message": "URLテーマスイッチャー",
+        "description": "Name of the extension"
+    },
+    "extensionDescription": {
+        "message": "現在のウェブサイトのURLに基づいてFirefoxのテーマカラーを自動的に変更します。開発、ステージング、本番環境などの区別に最適です。",
+        "description": "Description of the extension"
+    },
+    "currentUrl": {
+        "message": "現在のURL：$URL$",
+        "description": "Shows the current URL",
+        "placeholders": {
+            "url": {
+                "content": "$1"
+            }
+        }
+    },
+    "noActiveTab": {
+        "message": "アクティブなタブがありません",
+        "description": "Shown when no tab is active"
+    },
+    "urlPatternLabel": {
+        "message": "URLパターン",
+        "description": "Label for URL pattern input"
+    },
+    "urlPatternPlaceholder": {
+        "message": "例：*.example.com/*",
+        "description": "Placeholder for URL pattern input"
+    },
+    "urlPatternHelp": {
+        "message": "ワイルドカードとして*を使用します。例：*://*.example.com/*",
+        "description": "Help text for URL pattern input"
+    },
+    "themeColorLabel": {
+        "message": "テーマカラー",
+        "description": "Label for color picker"
+    },
+    "addRule": {
+        "message": "ルールを追加",
+        "description": "Button text for adding a new rule"
+    },
+    "updateRule": {
+        "message": "ルールを更新",
+        "description": "Button text for updating an existing rule"
+    },
+    "manageRules": {
+        "message": "すべてのルールを管理",
+        "description": "Link text to open options page"
+    },
+    "noRulesConfigured": {
+        "message": "ルールが設定されていません。拡張機能のポップアップからルールを追加してください。",
+        "description": "Shown when no rules are configured"
+    },
+    "editButton": {
+        "message": "編集",
+        "description": "Edit button text"
+    },
+    "deleteButton": {
+        "message": "削除",
+        "description": "Delete button text"
+    },
+    "saveButton": {
+        "message": "保存",
+        "description": "Save button text"
+    },
+    "cancelButton": {
+        "message": "キャンセル",
+        "description": "Cancel button text"
+    },
+    "deleteConfirm": {
+        "message": "このルールを削除してもよろしいですか？",
+        "description": "Confirmation message when deleting a rule"
+    },
+    "errorSaving": {
+        "message": "ルールの保存中にエラーが発生しました。もう一度お試しください。",
+        "description": "Error message when saving fails"
+    },
+    "errorDeleting": {
+        "message": "ルールの削除中にエラーが発生しました。もう一度お試しください。",
+        "description": "Error message when deletion fails"
+    }
+}

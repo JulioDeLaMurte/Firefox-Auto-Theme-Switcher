@@ -1,0 +1,83 @@
+{
+    "extensionName": {
+        "message": "URL Theme Switcher",
+        "description": "Name of the extension"
+    },
+    "extensionDescription": {
+        "message": "Automatically changes Firefox theme colors based on the current website URL. Perfect for distinguishing between different environments (dev, staging, prod).",
+        "description": "Description of the extension"
+    },
+    "currentUrl": {
+        "message": "Current URL: $URL$",
+        "description": "Shows the current URL",
+        "placeholders": {
+            "url": {
+                "content": "$1"
+            }
+        }
+    },
+    "noActiveTab": {
+        "message": "No active tab",
+        "description": "Shown when no tab is active"
+    },
+    "urlPatternLabel": {
+        "message": "URL Pattern",
+        "description": "Label for URL pattern input"
+    },
+    "urlPatternPlaceholder": {
+        "message": "e.g., *.example.com/*",
+        "description": "Placeholder for URL pattern input"
+    },
+    "urlPatternHelp": {
+        "message": "Use * as wildcard, e.g., *://*.example.com/*",
+        "description": "Help text for URL pattern input"
+    },
+    "themeColorLabel": {
+        "message": "Theme Color",
+        "description": "Label for color picker"
+    },
+    "addRule": {
+        "message": "Add Rule",
+        "description": "Button text for adding a new rule"
+    },
+    "updateRule": {
+        "message": "Update Rule",
+        "description": "Button text for updating an existing rule"
+    },
+    "manageRules": {
+        "message": "Manage All Rules",
+        "description": "Link text to open options page"
+    },
+    "noRulesConfigured": {
+        "message": "No rules configured yet. Add rules from the extension popup.",
+        "description": "Shown when no rules are configured"
+    },
+    "editButton": {
+        "message": "Edit",
+        "description": "Edit button text"
+    },
+    "deleteButton": {
+        "message": "Delete",
+        "description": "Delete button text"
+    },
+    "saveButton": {
+        "message": "Save",
+        "description": "Save button text"
+    },
+    "cancelButton": {
+        "message": "Cancel",
+        "description": "Cancel button text"
+    },
+    "deleteConfirm": {
+        "message": "Are you sure you want to delete this rule?",
+        "description": "Confirmation message when deleting a rule"
+    },
+    "errorSaving": {
+        "message": "Error saving rule. Please try again.",
+        "description": "Error message when saving fails"
+    },
+    "errorDeleting": {
+        "message": "Error deleting rule. Please try again.",
+        "description": "Error message when deletion fails"
+    }
+}
